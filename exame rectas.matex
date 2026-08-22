@@ -1,0 +1,39 @@
+<EX><p><b>Exercicio 1:</b> Resolve a seguinte inecuación de primeiro grao con unha incógnita e representa o conxunto de solucións na recta real:</p><p><MAT>3*x - 7 < 5*x + 1</MAT></p><p><b>Resolución:</b></p><p>Agrupamos os termos con incógnita nun membro e os termos independentes no outro:</p><p><MAT>3*x - 5*x < 1 + 7</MAT></p><p><MAT>-2*x < 8</MAT></p><p>Ao dividir entre un número negativo (<MAT>-2</MAT>), invertemos o sentido da desigualdade:</p><p><MAT>x > -4</MAT></p><p>A solución en forma de intervalo é: <MAT>(-4, inf)</MAT>.</p><TIKZ>\draw[thick, ->] (-6,0) -- (3,0) node[right] {$x$};
+\foreach \x in {-5,-4,-3,-2,-1,0,1,2} {
+  \draw (\x, 0.1) -- (\x, -0.1) node[below] {\small \x};
+}
+\draw[ultra thick, blue, ->] (-4,0) -- (2.8,0);
+\draw[fill=white, draw=blue, thick] (-4,0) circle (2.5pt);</TIKZ></EX>
+
+<EX><p><b>Exercicio 2:</b> Resolve a inecuación cadrática seguinte e interpreta graficamente o signo da función asociada:</p><p><MAT>x^2 - 2*x - 3 <= 0</MAT></p><p><b>Resolución:</b></p><p>Atopamos as raíces da ecuación asociada <MAT>x^2 - 2*x - 3 = 0</MAT>:</p><p><MAT>x = -1</MAT> e <MAT>x = 3</MAT>.</p><p>Como o coeficiente principal é positivo (<MAT>1 > 0</MAT>), a parábola ábrese cara arriba. Polo tanto, os valores menores ou iguais a cero corresponden ao intervalo pechado entre as dúas raíces:</p><p>Solución: <MAT>[-1, 3]</MAT>.</p><PLOT>plot2d([x^2 - 2*x - 3, 0], [x, -3, 5], [y, -5, 6], [legend, "y = x^2 - 2x - 3", "y = 0"])</PLOT></EX>
+
+<EX><p><b>Exercicio 3:</b> Resolve a inecuación racional seguinte e representa o intervalo solución na recta real:</p><p><MAT>(x + 2)/(x - 3) >= 0</MAT></p><p><b>Resolución:</b></p><p>Identificamos os valores onde se anulan o numerador e o denominador:</p><ul><li>Numerador: <MAT>x + 2 = 0</MAT> &rArr; <MAT>x = -2</MAT> (incluído na solución porque a desigualdade ten <MAT>>=</MAT>).</li><li>Denominador: <MAT>x - 3 = 0</MAT> &rArr; <MAT>x = 3</MAT> (excluído, non se pode dividir entre 0).</li></ul><p>Estudando os signos nos tres intervalos:</p><ul><li>Se <MAT>x < -2</MAT>: numerador negativo e denominador negativo &rArr; cociente positivo (+).</li><li>Se <MAT>-2 < x</MAT> e <MAT>x < 3</MAT>: numerador positivo e denominador negativo &rArr; cociente negativo (&minus;).</li><li>Se <MAT>x > 3</MAT>: numerador positivo e denominador positivo &rArr; cociente positivo (+).</li></ul><p>Solución: <MAT>(-inf, -2]</MAT> unida con <MAT>(3, inf)</MAT>.</p><TIKZ>\draw[thick, ->] (-5,0) -- (6,0) node[right] {$x$};
+\foreach \x in {-4,-3,-2,-1,0,1,2,3,4,5} {
+  \draw (\x, 0.1) -- (\x, -0.1) node[below] {\small \x};
+}
+\draw[ultra thick, blue, <-] (-4.8,0) -- (-2,0);
+\draw[fill=blue, draw=blue] (-2,0) circle (2.5pt);
+\draw[ultra thick, blue, ->] (3,0) -- (5.8,0);
+\draw[fill=white, draw=blue, thick] (3,0) circle (2.5pt);</TIKZ></EX>
+
+<EX><p><b>Exercicio 4:</b> Resolve o seguinte sistema de inecuacións lineais cunha incógnita:</p><p><MAT>2*x - 4 < 2</MAT></p><p><MAT>3*x + 1 >= -5</MAT></p><p><b>Resolución:</b></p><p>1. Resolvemos a primeira inecuación:</p><p><MAT>2*x < 6</MAT> &rArr; <MAT>x < 3</MAT>, cuxa solución é <MAT>(-inf, 3)</MAT>.</p><p>2. Resolvemos a segunda inecuación:</p><p><MAT>3*x >= -6</MAT> &rArr; <MAT>x >= -2</MAT>, cuxa solución é <MAT>[-2, inf)</MAT>.</p><p>A solución do sistema é a intersección de ambos os conxuntos:</p><p>Solución: <MAT>[-2, 3)</MAT>.</p><TIKZ>\draw[thick, ->] (-4,0) -- (5,0) node[right] {$x$};
+\foreach \x in {-3,-2,-1,0,1,2,3,4} {
+  \draw (\x, 0.1) -- (\x, -0.1) node[below] {\small \x};
+}
+\draw[ultra thick, blue] (-2,0) -- (3,0);
+\draw[fill=blue, draw=blue] (-2,0) circle (2.5pt);
+\draw[fill=white, draw=blue, thick] (3,0) circle (2.5pt);</TIKZ></EX>
+
+<EX><p><b>Exercicio 5:</b> Determina e representa graficamente a rexión factible definida polo seguinte sistema de inecuacións lineais con dúas incógnitas:</p><p><MAT>x + y <= 4</MAT></p><p><MAT>x - y >= 0</MAT></p><p><MAT>y >= 0</MAT></p><p><b>Resolución:</b></p><p>Representamos as rectas fronteira e os semiplanos asociados:</p><ul><li><MAT>x + y = 4</MAT>: pasa por (0, 4) e (4, 0). O semiplano <MAT>x + y <= 4</MAT> contén a orixe (0, 0).</li><li><MAT>x - y = 0</MAT> (<MAT>y = x</MAT>): bisectriz dos cuadrantes 1º e 3º. O semiplano <MAT>x - y >= 0</MAT> é o situado por debaixo da recta.</li><li><MAT>y = 0</MAT>: eixe de abscisas. A condición <MAT>y >= 0</MAT> indica o semiplano superior.</li></ul><p>A solución é a rexión triangular pechada con vértices nos puntos de corte (0, 0), (4, 0) e (2, 2).</p><TIKZ>\draw[step=1cm, gray!30, very thin] (-1,-1) grid (5,5);
+\draw[thick, ->] (-1,0) -- (5,0) node[right] {$x$};
+\draw[thick, ->] (0,-1) -- (0,5) node[above] {$y$};
+\foreach \x in {1,2,3,4} {
+  \draw (\x, 0.1) -- (\x, -0.1) node[below] {\small \x};
+  \draw (0.1, \x) -- (-0.1, \x) node[left] {\small \x};
+}
+\fill[blue!25, opacity=0.7] (0,0) -- (4,0) -- (2,2) -- cycle;
+\draw[thick, red] (-0.5, 4.5) -- (4.5, -0.5) node[right, black] {\small $x+y=4$};
+\draw[thick, green!60!black] (-0.5, -0.5) -- (4.5, 4.5) node[right, black] {\small $x-y=0$};
+\draw[fill=black] (0,0) circle (2pt) node[below left] {\small $(0,0)$};
+\draw[fill=black] (4,0) circle (2pt) node[below] {\small $(4,0)$};
+\draw[fill=black] (2,2) circle (2pt) node[above] {\small $(2,2)$};</TIKZ></EX>
