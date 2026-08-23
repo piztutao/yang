@@ -1,0 +1,65 @@
+<EX>
+  <HIDE>f1(x):=x^2/(x-1); asy1(x):=x+1</HIDE>
+  <p><b>Pregunta 1 (Análise):</b> Estudo e representación gráfica da función racional <MAT>f(x) = x^2 / (x - 1)</MAT>.</p>
+  <p><b>Resolución:</b></p>
+  <ul>
+    <li><b>Dominio:</b> Dom(f) = ℝ ∖ {1}.</li>
+    <li><b>Asíntota vertical:</b> En <MAT>x = 1</MAT>, xa que:<br><MAT>limit(x^2 / (x - 1), x, 1, minus) = -inf</MAT> e <MAT>limit(x^2 / (x - 1), x, 1, plus) = +inf</MAT>.</li>
+    <li><b>Asíntota oblicua:</b> <MAT>y = m*x + n</MAT><br>m = <MAT>limit((x^2/(x-1))/x, x, inf) = 1</MAT><br>n = <MAT>limit(x^2/(x-1) - x, x, inf) = 1</MAT><br>Polo tanto, a asíntota oblicua é a recta <MAT>y = x + 1</MAT>.</li>
+    <li><b>Extremos relativos:</b> Calculamos a primeira derivada:<br>f'(x) = <MAT>(x*(x - 2))/(x - 1)^2</MAT><br>Igualando a cero: <MAT>x*(x - 2) = 0</MAT> ⇒ <MAT>x = 0</MAT> e <MAT>x = 2</MAT>.<br>• En <MAT>x = 0</MAT>, <MAT>f(0) = 0</MAT> → Máximo relativo en (0, 0).<br>• En <MAT>x = 2</MAT>, <MAT>f(2) = 4</MAT> → Mínimo relativo en (2, 4).</li>
+  </ul>
+  <PLOT>plot2d([f1(x), asy1(x)], [x, -4, 6], [y, -8, 10], [legend, "f(x)", "Asíntota y=x+1"])</PLOT>
+</EX>
+
+<EX>
+  <HIDE>f2(x):=4-x^2; g2(x):=x+2</HIDE>
+  <p><b>Pregunta 2 (Cálculo integral):</b> Calcula a área do recinto limitado polas curvas <MAT>f(x) = 4 - x^2</MAT> e <MAT>g(x) = x + 2</MAT>.</p>
+  <p><b>Resolución:</b></p>
+  <ul>
+    <li><b>Puntos de corte:</b> Igualamos ámbalas dúas funcións:<br><MAT>4 - x^2 = x + 2</MAT> ⇒ <MAT>x^2 + x - 2 = 0</MAT><br>Resolvendo a ecuación obtemos <MAT>x = -2</MAT> e <MAT>x = 1</MAT>.</li>
+    <li><b>Cálculo da área:</b> No intervalo [-2, 1], compróbase que f(x) ≥ g(x).<br>Área = ∫₋₂¹ ((4 - x²) - (x + 2)) dx = ∫₋₂¹ (2 - x - x²) dx<br>Primitiva: <MAT>F(x) = 2*x - x^2/2 - x^3/3</MAT><br>Aplicando a regra de Barrow:<br>Área = F(1) - F(-2) = <MAT>4.5</MAT> u².</li>
+  </ul>
+  <PLOT>plot2d([f2(x), g2(x)], [x, -3, 2.5], [y, -2, 5], [legend, "f(x) = 4 - x^2", "g(x) = x + 2"])</PLOT>
+</EX>
+
+<EX>
+  <HIDE>m_val: 0; x_sol: 1; y_sol: 1; z_sol: 0</HIDE>
+  <p><b>Pregunta 3 (Álxebra lineal):</b> Discute segundo os valores do parámetro <i>m</i> o seguinte sistema de ecuacións lineais e resólveo para <MAT>m = 0</MAT>:</p>
+  <SISTEMA>
+x + y + z = 2
+2*x - y + m*z = 1
+3*x + m*y - z = 3
+  </SISTEMA>
+  <p><b>Resolución:</b></p>
+  <ul>
+    <li><b>Determinante da matriz de coeficientes:</b><br>|A| = <MAT>-m^2 - m + 6 = -(m + 3)*(m - 2)</MAT><br>Igualando a cero: |A| = 0 ⇒ <MAT>m = 2</MAT> ou <MAT>m = -3</MAT>.</li>
+    <li><b>Discusión:</b><br>• Se <i>m</i> ≠ 2 e <i>m</i> ≠ -3: ran(A) = ran(A*) = 3 = n° incógnitas ⇒ <b>Sistema Compatible Determinado</b> (solución única).<br>• Se <i>m</i> = 2 ou <i>m</i> = -3: ran(A) = 2 ≠ ran(A*) = 3 ⇒ <b>Sistema Incompatible</b>.</li>
+    <li><b>Resolución para m = 0:</b><br>O sistema é SCD. Aplicando a regra de Cramer ou eliminando variables:<br>x = <MAT>1</MAT>, y = <MAT>1</MAT>, z = <MAT>0</MAT>.<br>Solución única: (x, y, z) = (1, 1, 0). Representa a intersección de tres planos nun único punto.</li>
+  </ul>
+  <TIKZ>\draw[thick,->] (0,0,0) -- (3,0,0) node[anchor=north east]{$x$}; \draw[thick,->] (0,0,0) -- (0,3,0) node[anchor=north west]{$y$}; \draw[thick,->] (0,0,0) -- (0,0,3) node[anchor=south]{$z$}; \filldraw[fill=blue!20, opacity=0.5] (-0.5,2.5,0) -- (2.5,-0.5,0) -- (2.5,-0.5,2) -- (-0.5,2.5,2) -- cycle; \filldraw[fill=red!20, opacity=0.5] (0.5,0,0) -- (2,3,0) -- (2,3,2) -- (0.5,0,2) -- cycle; \filldraw[fill=green!20, opacity=0.5] (0,0,0) -- (3,0,0) -- (3,3,0) -- (0,3,0) -- cycle; \filldraw[black] (1,1,0) circle (2pt) node[anchor=south west]{$P(1,1,0)$};</TIKZ>
+</EX>
+
+<EX>
+  <HIDE>px: 1; py: 2; pz: 3; mx: 3; my: 0; mz: 2; d_pr: 3</HIDE>
+  <p><b>Pregunta 4 (Xeometría no espazo):</b> Dado o punto <MAT>P(1, 2, 3)</MAT> e a recta <MAT>r: (x - 1)/2 = (y + 1)/1 = z/2</MAT>, calcula a proxección ortogonal de P sobre r e a distancia do punto P á recta r.</p>
+  <p><b>Resolución:</b></p>
+  <ul>
+    <li><b>Plano π perpendicular a r que pasa por P:</b><br>O vector director da recta <MAT>v = [2, 1, 2]</MAT> actúa coma vector normal do plano.<br>Ecuación: <MAT>2*(x - 1) + 1*(y - 2) + 2*(z - 3) = 0</MAT> ⇒ <MAT>2*x + y + 2*z - 10 = 0</MAT>.</li>
+    <li><b>Proxección ortogonal M (corte de r e π):</b><br>Ecuacións paramétricas de r: <MAT>x = 1 + 2*t</MAT>, <MAT>y = -1 + t</MAT>, <MAT>z = 2*t</MAT>.<br>Substituíndo no plano: <MAT>2*(1 + 2*t) + (-1 + t) + 2*(2*t) - 10 = 0</MAT> ⇒ <MAT>9*t - 9 = 0</MAT> ⇒ <MAT>t = 1</MAT>.<br>Polo tanto, o punto proxección é <MAT>M(3, 0, 2)</MAT>.</li>
+    <li><b>Distancia de P á recta r:</b><br>Vector <MAT>PM = [3 - 1, 0 - 2, 2 - 3] = [2, -2, -1]</MAT>.<br>d(P, r) = |PM| = <MAT>sqrt(2^2 + (-2)^2 + (-1)^2) = sqrt(9) = 3</MAT> unidades.</li>
+  </ul>
+  <TIKZ>\draw[thick, blue] (-1,-0.5) -- (4,2) node[anchor=south west]{recta $r$}; \filldraw[fill=gray!15, draw=gray, opacity=0.7] (0,-1) -- (3,-1) -- (4,1.5) -- (1,1.5) -- cycle; \node at (0.5,1.2) {Plano $\pi$}; \filldraw[black] (2,1) circle (2pt) node[anchor=north west]{$M(3,0,2)$}; \filldraw[red] (2,3) circle (2pt) node[anchor=south]{$P(1,2,3)$}; \draw[dashed, thick, red] (2,3) -- (2,1) node[midway, right]{$d(P,r)=3$}; \draw (2,1.3) -- (1.7,1.3) -- (1.7,1);</TIKZ>
+</EX>
+
+<EX>
+  <HIDE>media: 60; desv: 10; p_a: 0.0668; p_b: 0.6826</HIDE>
+  <p><b>Pregunta 5 (Probabilidade e Estatística):</b> O tempo de realización dun exame de acceso segue unha distribución normal <MAT>X</MAT> ~ <MAT>N(60, 10)</MAT> en minutos.</p>
+  <p><b>a)</b> Calcula a probabilidade de que un estudante tarde máis de 75 minutos.<br><b>b)</b> Calcula a probabilidade de que remate entre 50 e 70 minutos.</p>
+  <p><b>Resolución:</b></p>
+  <ul>
+    <li><b>Tipificación:</b> <MAT>Z = (X - 60)/10</MAT> segue unha distribución <MAT>N(0, 1)</MAT>.</li>
+    <li><b>Apartado a:</b><br>P(X &gt; 75) = P(Z &gt; (75 - 60)/10) = P(Z &gt; 1.5) = 1 - P(Z ≤ 1.5) = 1 - 0.9332 = <b>0.0668</b> (6.68%).</li>
+    <li><b>Apartado b:</b><br>P(50 ≤ X ≤ 70) = P((50 - 60)/10 ≤ Z ≤ (70 - 60)/10) = P(-1 ≤ Z ≤ 1) = P(Z ≤ 1) - P(Z ≤ -1)<br>= P(Z ≤ 1) - (1 - P(Z ≤ 1)) = 2·0.8413 - 1 = <b>0.6826</b> (68.26%).</li>
+  </ul>
+  <TIKZ>\draw[->] (-3.5,0) -- (3.5,0) node[right]{$Z$}; \draw[->] (0,0) -- (0,1.2) node[above]{$f(z)$}; \fill[cyan!30, domain=-1:1, variable=\x] (-1,0) -- plot({\x}, {exp(-\x*\x/2)}) -- (1,0) -- cycle; \draw[thick, blue, domain=-3.2:3.2, samples=60] plot({\x}, {exp(-\x*\x/2)}); \draw (-1,0.05) -- (-1,-0.05) node[below]{$-1$}; \draw (0,0.05) -- (0,-0.05) node[below]{$0$}; \draw (1,0.05) -- (1,-0.05) node[below]{$1$}; \node at (0,0.4) {$68.26\%$};</TIKZ>
+</EX>
