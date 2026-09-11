@@ -1,1 +1,0 @@
-<EX><EVAL>integrate(sqrt(tan(x))/(sin(x)^4 + cos(x)^4), x)</EVAL></EX>
