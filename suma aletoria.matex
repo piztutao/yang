@@ -1,1 +1,0 @@
-<EX><HIDE>a: 1000 + random(1000); b: 1000 + random(1000);</HIDE><p>Calcula o resultado da seguinte suma:</p><p style="text-align: center; font-size: 1.2em;"><EVAL>a</EVAL> + <EVAL>b</EVAL></p></EX>
